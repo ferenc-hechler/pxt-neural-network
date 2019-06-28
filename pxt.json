@@ -7,6 +7,8 @@
     "description": "",
     "files": [
         "shims.d.ts",
+        "typetest.ts",
+        "typetest.cpp",
         "neural-network.ts",
         "neural-network.cpp",
         "main.blocks",

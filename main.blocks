@@ -52,7 +52,7 @@
                   <shadow type="math_number" id="?QYwY170css3*MkF_.|L">
                     <field name="NUM">0</field>
                   </shadow>
-                  <block type="nn_addvec">
+                  <block type="tt_addvec">
                     <value name="vec1">
                       <block type="variables_get">
                         <field name="VAR" id="Bb=E?xjFk][Rb8[)v,Va" variabletype="">vec1</field>
@@ -80,26 +80,43 @@
                       </block>
                     </value>
                     <next>
-                      <block type="device_show_number">
-                        <value name="number">
-                          <shadow type="math_number" id="/PmCHqrrA/1m{D=gHGCR">
-                            <field name="NUM">0</field>
-                          </shadow>
-                          <block type="lists_index_get">
-                            <value name="LIST">
-                              <block type="variables_get">
-                                <field name="VAR" id="#fE2)Z`Il2PzkqZhh)qZ" variabletype="">vec3</field>
-                              </block>
-                            </value>
-                            <value name="INDEX">
-                              <shadow type="math_number">
+                      <block type="tt_test">
+                        <next>
+                          <block type="device_show_number">
+                            <value name="number">
+                              <shadow type="math_number" id="/PmCHqrrA/1m{D=gHGCR">
                                 <field name="NUM">0</field>
                               </shadow>
+                              <block type="lists_index_get">
+                                <value name="LIST">
+                                  <block type="variables_get">
+                                    <field name="VAR" id="#fE2)Z`Il2PzkqZhh)qZ" variabletype="">vec3</field>
+                                  </block>
+                                </value>
+                                <value name="INDEX">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                              </block>
                             </value>
+                            <next>
+                              <block type="device_show_number">
+                                <value name="number">
+                                  <shadow type="math_number" id="$?7sog5HhQKD!P(}/B,8">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="tt_sumvec">
+                                    <value name="vec">
+                                      <block type="variables_get">
+                                        <field name="VAR" id="#fE2)Z`Il2PzkqZhh)qZ" variabletype="">vec3</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
                           </block>
-                        </value>
-                        <next>
-                          <block type="nn_test"></block>
                         </next>
                       </block>
                     </next>

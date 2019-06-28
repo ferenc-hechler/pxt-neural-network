@@ -1,11 +1,11 @@
-//% weight=70 icon="\u30A2" color=#75CC05 block="NN"
-namespace nn {
+//% weight=70 icon="\u30A2" color=#EC7505 block="TT"
+namespace tt {
 
-    //% blockId=nn_test
+    //% blockId=tt_test
     //% block="Test"
-    //% shim=nn::test
+    //% shim=tt::test
     export function test(): void {
-    	basic.showString("sim-NN-test")
+    	basic.showString("sim-tt-test")
         return
     }
 
@@ -15,32 +15,32 @@ namespace nn {
      */
      //% weight=92 blockGap=8
      //% block="Show|string %text" 
-     //% blockId=nn_show
-     //% shim=nn::show
+     //% blockId=tt_show
+     //% shim=tt::show
      export function show(text: string): void {
         console.log("sim:" + text)
     	basic.showString("sim:" + text)
         return
 	}
 
-    //% blockId=nn_gettime
+    //% blockId=tt_gettime
     //% block="Current Time" 
-    //% shim=nn::gettime
+    //% shim=tt::gettime
 	export function gettime(): string {
 		return "sim:12:00:00"
 	}
 
-	//% blockId=nn_sumvec
+	//% blockId=tt_sumvec
 	//% block="Sum Vec|number[] %vec"
-	//% shim=nn::sumvec
+	//% shim=tt::sumvec
 	export function sumvec(vec: number[]): number {
         console.log("sim:" + vec[0])
         return vec[0]
 	}
 	
-	//% blockId=nn_addvec
+	//% blockId=tt_addvec
 	//% block="Add Vec|number[] %vec1|number[] %vec2"
-	//% shim=nn::addvec
+	//% shim=tt::addvec
 	export function addvec(vec1: number[], vec2: number[]): number[] {
         console.log("sim:" + (vec1[0]+vec2[0]))
         return vec1
