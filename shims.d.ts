@@ -1,2 +1,3 @@
 declare namespace nn {
+
 }

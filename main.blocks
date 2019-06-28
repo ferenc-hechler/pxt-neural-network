@@ -2,7 +2,28 @@
   <variables></variables>
   <block type="pxt-on-start" x="0" y="0">
     <statement name="HANDLER">
-      <block type="nn_test"></block>
+      <block type="nn_show">
+        <value name="text">
+          <shadow type="text" id="?GM/[@1wS}zZ27ua-A|l">
+            <field name="TEXT">Hi, CPP!</field>
+          </shadow>
+          <block type="nn_gettime"></block>
+        </value>
+        <next>
+          <block type="nn_test">
+            <next>
+              <block type="nn_show">
+                <value name="text">
+                  <shadow type="text" id="?GM/[@1wS}zZ27ua-A|l">
+                    <field name="TEXT">Hi, CPP!</field>
+                  </shadow>
+                  <block type="nn_gettime"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
     </statement>
   </block>
 </xml>
