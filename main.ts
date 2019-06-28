@@ -1,4 +1,6 @@
+let vec1 = [1.25, 2.5]
+let vec2 = [10, 20]
+let vec3 = nn.addvec(vec1, vec2)
+basic.showNumber(vec3.length)
+basic.showNumber(vec3[0])
 nn.test()
-let field = [1.5, 4.5, 1.5, 1.1]
-let sum = nn.sumvec(field)
-basic.showNumber(sum)

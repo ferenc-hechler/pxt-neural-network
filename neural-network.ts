@@ -38,5 +38,13 @@ namespace nn {
         return vec[0]
 	}
 	
+	//% blockId=nn_addvec
+	//% block="Add Vec|number[] %vec1|number[] %vec2"
+	//% shim=nn::addvec
+	export function addvec(vec1: number[], vec2: number[]): number[] {
+        console.log("sim:" + (vec1[0]+vec2[0]))
+        return vec1
+	}
+	
 
 }

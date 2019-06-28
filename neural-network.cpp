@@ -67,6 +67,26 @@ namespace nn {
 	    return fromFloat(result);
 	}
 
+	//% blockId=nn_addvec
+	//% block="Add Vec|number[] %vec1|number[] %vec2"
+	//% shim=nn::addvec
+	RefCollection *addvec(RefCollection &vec1, RefCollection &vec2) {
+	    uBit.serial.send("CALL: addvec()\r\n");
+	    int len1 = vec1.length();
+	    int len2 = vec2.length();
+	    if (len1 != len2) {
+		    uBit.serial.printf("different vector sizes: %d and %d\r\n", len1, len2);
+		    return 0;
+	    }
+	    RefCollection *result = Array_::mk();
+	    for (int i=0; i<len1; i++) {
+	    	float v1 = toFloat(vec1.getAt(i));
+	    	float v2 = toFloat(vec2.getAt(i));
+	    	float vr = v1 + v2;
+		    Array_::insertAt(result, i, fromFloat(vr));
+	    }
+	    return result;
+	}
 
 
 }
