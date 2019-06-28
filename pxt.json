@@ -1,0 +1,20 @@
+{
+    "name": "feri",
+    "version": "0.0.0",
+    "description": "neural network extension - beta",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "shims.d.ts",
+        "neural-network.ts",
+        "neural-network.cpp",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": false,
+    "preferredEditor": "blocksprj"
+}
