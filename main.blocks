@@ -1,24 +1,69 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <variables></variables>
+  <variables>
+    <variable type="" id="S^p3[4,h$n+-8smhOP@S">field</variable>
+    <variable type="" id="yy/6w|JpGzqdHiI~)i=C">sum</variable>
+  </variables>
   <block type="pxt-on-start" x="0" y="0">
     <statement name="HANDLER">
-      <block type="nn_show">
-        <value name="text">
-          <shadow type="text" id="?GM/[@1wS}zZ27ua-A|l">
-            <field name="TEXT">Hi, CPP!</field>
-          </shadow>
-          <block type="nn_gettime"></block>
-        </value>
+      <block type="nn_test">
         <next>
-          <block type="nn_test">
-            <next>
-              <block type="nn_show">
-                <value name="text">
-                  <shadow type="text" id="?GM/[@1wS}zZ27ua-A|l">
-                    <field name="TEXT">Hi, CPP!</field>
+          <block type="variables_set">
+            <field name="VAR" id="S^p3[4,h$n+-8smhOP@S" variabletype="">field</field>
+            <value name="VALUE">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="lists_create_with">
+                <mutation items="4"></mutation>
+                <value name="ADD0">
+                  <shadow type="math_number">
+                    <field name="NUM">1.5</field>
                   </shadow>
-                  <block type="nn_gettime"></block>
                 </value>
+                <value name="ADD1">
+                  <shadow type="math_number">
+                    <field name="NUM">4.5</field>
+                  </shadow>
+                </value>
+                <value name="ADD2">
+                  <shadow type="math_number">
+                    <field name="NUM">1.5</field>
+                  </shadow>
+                </value>
+                <value name="ADD3">
+                  <shadow type="math_number">
+                    <field name="NUM">1.1</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set">
+                <field name="VAR" id="yy/6w|JpGzqdHiI~)i=C" variabletype="">sum</field>
+                <value name="VALUE">
+                  <shadow type="math_number" id="q]SW=t$#Z-+Q)~]q.jQG">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="nn_sumvec">
+                    <value name="vec">
+                      <block type="variables_get">
+                        <field name="VAR" id="S^p3[4,h$n+-8smhOP@S" variabletype="">field</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="device_show_number">
+                    <value name="number">
+                      <shadow type="math_number" id="Nnp}N:a:X9iX9Qy0JZo}">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="variables_get">
+                        <field name="VAR" id="yy/6w|JpGzqdHiI~)i=C" variabletype="">sum</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
               </block>
             </next>
           </block>

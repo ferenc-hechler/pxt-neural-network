@@ -35,6 +35,10 @@ namespace nn {
 
 	static int cnt = 0;
 
+	void writeHex(int8_t b) {
+		uBit.serial.printf(" %x", b);
+	}
+
 	//% blockId=nn_gettime
 	//% block="Current Time"
 	//% shim=nn::gettime
@@ -46,5 +50,23 @@ namespace nn {
 	    sprintf(buf, "cpp-%d", cnt);
 	    return mkString(buf);
 	}
+
+	//% blockId=nn_sumvec
+	//% block="Sum Vec|number[] %vec"
+	//% shim=nn::sumvec
+	TNumber sumvec(RefCollection &arr) {
+	    uBit.serial.send("CALL: sumvec()\r\n");
+	    int len = arr.length();
+	    uBit.serial.printf("len: %d\r\n", len);
+	    float result = 0.0f;
+	    for (int i=0; i<len; i++) {
+		    TNumber tn = arr.getAt(i);
+			float f = toFloat(tn);
+			result += f;
+	    }
+	    return fromFloat(result);
+	}
+
+
 
 }

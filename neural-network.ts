@@ -30,4 +30,13 @@ namespace nn {
 		return "sim:12:00:00"
 	}
 
+	//% blockId=nn_sumvec
+	//% block="Sum Vec|number[] %vec"
+	//% shim=nn::sumvec
+	export function sumvec(vec: number[]): number {
+        console.log("sim:" + vec[0])
+        return vec[0]
+	}
+	
+
 }
