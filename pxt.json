@@ -1,20 +1,17 @@
 {
-    "name": "feri",
-    "version": "0.0.0",
-    "description": "neural network extension - beta",
+    "name": "ainn",
     "dependencies": {
         "core": "*",
         "radio": "*"
     },
+    "description": "",
     "files": [
         "shims.d.ts",
         "neural-network.ts",
         "neural-network.cpp",
+        "main.blocks",
+        "main.ts",
         "README.md"
     ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "public": false,
     "preferredEditor": "blocksprj"
 }

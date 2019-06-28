@@ -1,0 +1,8 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables></variables>
+  <block type="pxt-on-start" x="0" y="0">
+    <statement name="HANDLER">
+      <block type="nn_test"></block>
+    </statement>
+  </block>
+</xml>

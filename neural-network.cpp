@@ -3,7 +3,7 @@
 
 using namespace pxt;
 
-namespace feri {
+namespace nn {
 
 	//% blockId=nn_Test
 	//% block="Test"
