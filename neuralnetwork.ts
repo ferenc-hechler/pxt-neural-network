@@ -2,10 +2,10 @@
 namespace nn {
 
 
-    //% blockId=nn_initFCNN
+    //% blockId=nn_initfcnn
     //% block="Init Brain|number %inputs|number[] %hidden|number %outputs"
-    //% shim=nn::initFCNN
-    export function initFCNN(inputs: number, hidden: number[], outputs: number): void {
+    //% shim=nn::initfcnn
+    export function initfcnn(inputs: number, hidden: number[], outputs: number): void {
     	basic.showString("sim:init")
     }
 

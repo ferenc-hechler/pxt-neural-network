@@ -1,6 +1,8 @@
 #include "pxt.h"
 #include "MicroBit.h"
 
+#include "Utils.h"
+
 using namespace pxt;
 
 namespace tt {
@@ -88,5 +90,17 @@ namespace tt {
 	    return result;
 	}
 
+
+    /**
+     * log a number.
+     * @param num number to display, eg: 1.5
+     */
+     //% weight=92 blockGap=8
+     //% block="Log Number|number %num"
+     //% blockId=tt_logNumber
+     //% shim=tt::logNumber
+     void logNum(float num) {
+    	 logFloat(num);
+     }
 
 }

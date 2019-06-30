@@ -23,6 +23,20 @@ namespace tt {
         return
 	}
 
+    /**
+     * log a number.
+     * @param num number to display, eg: 1.5
+     */
+     //% weight=92 blockGap=8
+     //% block="Log Number|number %num" 
+     //% blockId=tt_lognum
+     //% shim=tt::lognum
+     export function lognum(num: number): void {
+        console.log("sim:")
+        return
+	}
+
+
     //% blockId=tt_gettime
     //% block="Current Time" 
     //% shim=tt::gettime

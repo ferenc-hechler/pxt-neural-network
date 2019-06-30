@@ -33,10 +33,10 @@ namespace nn {
 	}
 
 
-	//% blockId=nn_initFCNN
+	//% blockId=nn_initfcnn
 	//% block="Init Brain|number %inputs|number[] %hidden|number %outputs"
-	//% shim=nn::initFCNN
-	void initFCNN(int inputs, RefCollection &hidden, int outputs) {
+	//% shim=nn::initfcnn
+	void initfcnn(int inputs, RefCollection &hidden, int outputs) {
 
 		if (brain != 0) {
 			delete brain;
