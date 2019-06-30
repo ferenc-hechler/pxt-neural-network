@@ -7,13 +7,25 @@
     "description": "",
     "files": [
         "shims.d.ts",
-        "typetest.ts",
         "typetest.cpp",
-        "neural-network.ts",
-        "neural-network.cpp",
+        "typetest.ts",
+        "neuralnetwork.ts",
+        "Mat.h",
+        "Mat.cpp",
+        "NN.h",
+        "NN.cpp",
+        "NNLayer.h",
+        "NNLayer.cpp",
+        "NNUtils.h",
+        "NNUtils.cpp",
+        "Utils.h",
+        "Utils.cpp",
+        "Vect.h",
+        "Vect.cpp",
         "main.blocks",
         "main.ts",
         "README.md"
     ],
+    "public": false,
     "preferredEditor": "blocksprj"
 }
