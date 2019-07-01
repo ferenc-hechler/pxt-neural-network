@@ -19,11 +19,11 @@ namespace nn {
 
 
     //% blockId=nn_predict
-    //% block="Predict|number[] %input"
+    //% block="Predict|number[] %input|number[] %output"
     //% shim=nn::predict
-    export function predict(input: number[]): number[] {
+    export function predict(input: number[], output: number[]): void {
     	basic.showString("sim-predict")
-        return input
+        return
     }
 
 }

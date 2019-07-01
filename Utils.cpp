@@ -99,17 +99,17 @@ void throwError(const char *errMsg) {
 }
 
 void log(const char *msg) {
-	uBit.display.scroll(msg);
+	uBit.serial.send(msg);
 }
 
 void logFloat(float f) {
-	char buf[100];
+	char buf[30];
 	float2char(buf, f, 3);
 	log(buf);
 }
 
 void logInt(int i) {
-	char buf[100];
+	char buf[30];
 	sprintf(buf, "%d", i);
 	log(buf);
 }

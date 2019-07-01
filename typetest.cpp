@@ -7,6 +7,27 @@ using namespace pxt;
 
 namespace tt {
 
+
+void logln() {
+	 log("\r\n");
+}
+
+void logRColl(RefCollection &rColl) {
+	 char buf[30];
+	 log("rColl(");
+	 for (int i=0; i<rColl.length(); i++) {
+		 if (i==0) {
+			 uBit.serial.send("(");
+		 } else {
+			 uBit.serial.send(",");
+		 }
+		 float2char(buf, toFloat(rColl.getAt(i)), 2);
+		 log(buf);
+	 }
+	 log(")");
+}
+
+
 	//% blockId=tt_test
 	//% block="Test"
 	//% shim=tt::test
@@ -72,22 +93,49 @@ namespace tt {
 	//% blockId=tt_addvec
 	//% block="Add Vec|number[] %vec1|number[] %vec2"
 	//% shim=tt::addvec
-	RefCollection *addvec(RefCollection &vec1, RefCollection &vec2) {
-	    uBit.serial.send("CALL: addvec()\r\n");
+	RefCollection addvec(RefCollection &vec1, RefCollection &vec2) {
+	    uBit.serial.send("CALL: addvec() \r\n");
+	    logRColl(vec1);
+	    logRColl(vec2);
 	    int len1 = vec1.length();
 	    int len2 = vec2.length();
+	    RefCollection result;
 	    if (len1 != len2) {
 		    uBit.serial.printf("different vector sizes: %d and %d\r\n", len1, len2);
-		    return 0;
+		    return result;
 	    }
-	    RefCollection *result = Array_::mk();
+//	    RefCollection *result = Array_::mk();
 	    for (int i=0; i<len1; i++) {
 	    	float v1 = toFloat(vec1.getAt(i));
 	    	float v2 = toFloat(vec2.getAt(i));
 	    	float vr = v1 + v2;
-		    Array_::insertAt(result, i, fromFloat(vr));
+//		    Array_::insertAt(result, i, fromFloat(vr));
+	    	result.head.push(fromFloat(vr));
 	    }
+	    logRColl(result);
 	    return result;
+	}
+
+
+	//% blockId=tt_logvec
+	//% block="Log Vec|number[] %vec"
+	//% shim=tt::logvec
+	void logvec(RefCollection &vec) {
+		char buf[30];
+	    int len = vec.length();
+	    log("rColl(");
+	    for (int i=0; i<len; i++) {
+	    	float v = toFloat(vec.getAt(i));
+			 if (i==0) {
+				 log("(");
+			 } else {
+				 log(",");
+			 }
+			 float2char(buf, toFloat(vec.getAt(i)), 2);
+			 log(buf);
+		 }
+		 log(")");
+//		 vec.head.set(1, fromFloat(3.3f));
 	}
 
 

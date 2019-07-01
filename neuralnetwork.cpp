@@ -81,13 +81,15 @@ namespace nn {
 	//% blockId=nn_predict
 	//% block="Predict|"
 	//% shim=nn::predict
-	RefCollection *predict(RefCollection &input) {
+	void predict(RefCollection &input, RefCollection &output) {
 		Vect *x = toVect(input);
 		Vect *y_hat = brain->forwardPropagate(x);
-		RefCollection *result = toRefCollection(y_hat);
+		output.setLength(y_hat->getLength());
+		for (int i=0; i<y_hat->getLength(); i++) {
+			output.head.set(i, fromFloat(y_hat->get(i)));
+		}
 		delete x;
 		delete y_hat;
-		return result;
 	}
 
 

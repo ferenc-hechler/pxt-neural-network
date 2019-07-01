@@ -61,4 +61,12 @@ namespace tt {
 	}
 	
 
+	//% blockId=tt_logvec
+	//% block="Log Vec|number[] %vec"
+	//% shim=tt::logvec
+	export function logvec(vec: number[]): void {
+        console.log("sim:logvec")
+        return
+	}
+	
 }
